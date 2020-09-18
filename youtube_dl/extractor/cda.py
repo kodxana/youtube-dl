@@ -187,8 +187,8 @@ class CDAIE(InfoExtractor):
 
         return info_dict
 
-def getDecoder():
-    return js2py.eval_js(R'''
+    def getDecoder():
+        return js2py.eval_js(R'''
 var k = function (a) {
     return a.replace(/[a-zA-Z]/g, function (a) {
         return String.fromCharCode(("Z" >= a ? 90 : 122) >= (a = a.charCodeAt(0) + 13) ? a : a - 26)
